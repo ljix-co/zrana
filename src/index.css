@@ -156,6 +156,7 @@ p {
   align-items: center;
   justify-content: flex-start;
   margin-top: 150px;
+  
 }
 .title h1{
   display: flex;
@@ -165,7 +166,7 @@ p {
   color: #596F35;
   font-size: 72px;
   font-weight: 700;
- width: 928px;
+ width: 1028px;
 }
 .title img{
   width: 257px;

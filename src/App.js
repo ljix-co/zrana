@@ -5,10 +5,12 @@ import {
   Switch,
   Route
 } from 'react-router-dom'
-import Navbar from './compoenents/Navbar';
+import Navbar from './components/Navbar';
 import Home from './routes/Home';
 import Recepies from './routes/Recepies';
-import Footer from './compoenents/Footer';
+import Footer from './components/Footer';
+import Blog from './routes/Blog';
+import Pantry from './routes/Pantry';
 function App() {
   return (
     <Router>
@@ -20,6 +22,12 @@ function App() {
           </Route>
           <Route path="/recepies">
             <Recepies/>
+          </Route>
+          <Route path="/blog">
+            <Blog/>
+          </Route>
+          <Route path="/pantry">
+            <Pantry/>
           </Route>
         </Switch>
         <Footer/>
