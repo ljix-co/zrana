@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap");
+.bottom-div {
+    width: 100vw;
+    height: 542px;
+    background: linear-gradient(180deg, rgba(255, 145, 77, 0) 0.69%, #ff914d 8.5%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.b-bottom-div{
+    margin-top: 77px;
+    border-top: 1px solid #A95D2E;
+    width: 1154px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.b-bottom-div p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    margin-top: 18px;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+.b-bottom-div p .logo_lj{
+    height: 28px;
+}
+.b-bottom-div p .mars{
+    height: 18px;
+}
+.b-top-div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 492px;
+}
+.b-top-div .f-logo{
+    margin-top: 155px;
+}
+.footer-home {
+    position: absolute;
+    top: 3100px;
+    left: 0;
+    z-index: -2;
+}
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 57px;
+    margin-top: 110px;
+}
+.links .link {
+    width: 342px;
+    height: 104px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: rgba(244, 246, 237, 0.81);
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+    font-size: 24px;
+    font-weight: 700;
+    gap: 32px;
+}
+.link img{
+    width: 66px;
+}
+.link p{
+width: 177px;
+margin-left: 27px;
+text-align: start;
+}
+.top-div {
+    width: 100vw;
+    height: 440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 86px;
+    background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0));
+}
+.top-div h1 {
+    width: 558px;
+    font-size: 72px;
+    line-height: 90px;
+    font-weight: 700;
+    margin: 0;
+    margin-top: 110px;
+}
+.top-link {
+    width: 340px;
+    height: 122px;
+    background-color: #ff914d;
+    font-size: 72px;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
