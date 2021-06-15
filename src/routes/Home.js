@@ -58,7 +58,7 @@ const Home = () => {
                         da zadovoljimo svoja nepca. Snimke pripreme prema odabranim receptima možete pogledati na blog stranici.
                         Naravno, sve zasluge biće pripisane autoru recepta.
                         </p>
-                        <Link className="link-grn" to="/recepies"><p>RECEPTI</p><img className="arrow" src={arrowLeft} alt="" /></Link>
+                        <Link className="link-grn" to="/recipes"><p>RECEPTI</p><img className="arrow" src={arrowLeft} alt="" /></Link>
                         <Link className="link-orng" to="/blog"><p>BLOG</p><img className="arrow" src={arrowLeft} alt="" /></Link>
                         <img className="img-sub" src="../images/home_img2.png" alt="" />
                     </div>

@@ -11,6 +11,8 @@ import Recepies from './routes/Recepies';
 import Footer from './components/Footer';
 import Blog from './routes/Blog';
 import Pantry from './routes/Pantry';
+import Login from './routes/Login';
+import Registration from './routes/Registration';
 function App() {
   return (
     <Router>
@@ -20,7 +22,7 @@ function App() {
           <Route exact path="/">
             <Home/>
           </Route>
-          <Route path="/recepies">
+          <Route path="/recipes">
             <Recepies/>
           </Route>
           <Route path="/blog">
@@ -28,6 +30,12 @@ function App() {
           </Route>
           <Route path="/pantry">
             <Pantry/>
+          </Route>
+          <Route path="/login">
+            <Login/>
+          </Route>
+          <Route path="/registration">
+            <Registration/>
           </Route>
         </Switch>
         <Footer/>

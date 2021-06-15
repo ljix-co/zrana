@@ -13,7 +13,9 @@ body {
   overflow-x: hidden;
   /* background-color: #F4F6ED; */
 }
-
+button{
+  font-family: "Quicksand", sans-serif;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
@@ -23,9 +25,11 @@ input{
   height: 78px;
   text-align: center;
   border: none;
+  font-family: "Quicksand", sans-serif;
 }
 ::placeholder{
   color: #ffffff;
+  font-family: "Quicksand", sans-serif;
 }
 input:focus{
   outline: none;
@@ -37,7 +41,10 @@ p {
   background: linear-gradient(to bottom, #f4f6ed, #ffffff);
   font-family: "Quicksand", sans-serif;
 }
-
+.btn-exit{
+  background-color: transparent;
+  border: none;
+}
 
 .link-selected {
   text-decoration: underline;
@@ -173,8 +180,18 @@ p {
   margin-left: 25px;
 }
 .title p{
-width: 444px;
+width: 644px;
 font-size: 36px;
 text-align: center;
 font-weight: 700;
+}
+.search-field {
+  width: 464px;
+  height: 78px;
+  display: flex;
+  align-items: center;
+ margin-top: 92px;
+ margin-bottom: 115px;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
 }

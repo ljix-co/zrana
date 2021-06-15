@@ -74,6 +74,7 @@ width: 177px;
 margin-left: 27px;
 text-align: start;
 }
+
 .top-div {
     width: 100vw;
     height: 440px;
@@ -84,7 +85,7 @@ text-align: start;
     gap: 86px;
     background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0));
 }
-.top-div h1 {
+.top-div .top-div-title {
     width: 558px;
     font-size: 72px;
     line-height: 90px;
@@ -92,8 +93,27 @@ text-align: start;
     margin: 0;
     margin-top: 110px;
 }
+.top-div  .top-div-title-reg{
+    width: 700px;
+    font-size: 72px;
+    line-height: 90px;
+    font-weight: 700;
+    margin: 0;
+    margin-top: 20px;
+}
 .top-link {
     width: 340px;
+    height: 122px;
+    background-color: #ff914d;
+    font-size: 72px;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.top-link-reg{
+    width: 600px;
     height: 122px;
     background-color: #ff914d;
     font-size: 72px;

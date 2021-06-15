@@ -11,13 +11,13 @@ const Footer = () => {
         <div className="footer" className={location.pathname === '/' ? 'footer-home' : 'footer-reg'}>
             {location.pathname === '/login' &&
                 <div className="top-div">
-                    <h1>NEMATE PROFIL?</h1>
-                    <Link className="top-link" to="/registration">REGISTRACIJA</Link>
+                    <h1 className="top-div-title-reg">NEMATE PROFIL?</h1>
+                    <Link className="top-link-reg" to="/registration">REGISTRACIJA</Link>
                 </div>
                 }
                  {location.pathname !== '/login' &&
                 <div className="top-div">
-                    <h1>IMATE PROFIL?</h1>
+                    <h1 className="top-div-title">IMATE PROFIL?</h1>
                     <Link className="top-link" to="/login">LOGIN</Link>
                 </div>
                 }
