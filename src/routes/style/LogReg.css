@@ -1,10 +1,9 @@
-
-.login-reg{
+.login-reg {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.line-d-l-lng{
+.line-d-l-lng {
     width: 284px;
     height: 248px;
     transform: rotate(-45deg);
@@ -16,14 +15,14 @@
     top: 1000px;
     left: 1100px;
 }
-.line-d-l-shrt{
+.line-d-l-shrt {
     width: 127px;
     height: 127px;
     margin-right: 70px;
     margin-bottom: -100px;
     border-right: 30px solid rgba(148, 227, 20, 0.05);
 }
-.line-d-r{
+.line-d-r {
     width: 426px;
     height: 426px;
     transform: rotate(-45deg);
@@ -35,14 +34,14 @@
     align-items: flex-end;
     justify-content: flex-end;
 }
-.line-d-r-inner{
+.line-d-r-inner {
     width: 143px;
     height: 143px;
     border-right: 30px solid rgba(148, 227, 20, 0.05);
     margin-right: 200px;
     margin-bottom: 100px;
 }
-.line-up-l{
+.line-up-l {
     width: 273px;
     height: 273px;
     border-left: 20px solid rgba(148, 227, 20, 0.05);
@@ -53,15 +52,16 @@
     position: absolute;
     top: 466px;
     left: 332px;
+    /* z-index: -1; */
 }
-.line-up-l-inner{
+.line-up-l-inner {
     width: 114px;
     height: 114px;
     border-top: 20px solid rgba(148, 227, 20, 0.05);
     margin-top: 50px;
     margin-left: 50px;
 }
- .line-up-r{
+.line-up-r {
     width: 416px;
     height: 416px;
     border-right: 30px solid rgba(148, 227, 20, 0.05);
@@ -73,7 +73,7 @@
     align-items: flex-end;
     justify-content: flex-end;
 }
- .line-up-r-inner{
+.line-up-r-inner {
     width: 218px;
     height: 218px;
     border-bottom: 30px solid rgba(148, 227, 20, 0.05);
@@ -81,39 +81,115 @@
     margin-right: 50px;
     margin-bottom: 50px;
 }
-.login-reg-form{
-    margin-top: 200px;
-    margin-bottom: 400px;
+.login-reg-form {
     width: 550px;
     height: 650px;
-    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     gap: 50px;
+    position: relative;
+    margin-top: 200px;
+    margin-bottom: 400px;
+    z-index: 1;
 }
-.login-reg-form h1{
-    color: #94E314;
+.login-reg-form h1 {
+    color: #94e314;
     font-size: 72px;
     /* line-height: 120px; */
     font-weight: 700;
     margin: 0;
     margin-top: 50px;
 }
-.login-reg-form button{
+.login-reg-form button {
     width: 150px;
     height: 50px;
-    background-color: #FF914D;
+    background-color: #ff914d;
     color: white;
     border: none;
     font-weight: 700;
     font-size: 20px;
 }
-.login-reg-form input{
+.login-reg-form input {
     height: 50px;
 }
-.login-reg-form ::placeholder{
+.login-reg-form ::placeholder {
     font-size: 20px;
     font-weight: 700;
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+
+    .line-d-l-lng {
+        display: none;
+    }
+    .line-d-l-shrt {
+        display: none;
+    }
+    .line-d-r {
+        display: none;
+    }
+    .line-d-r-inner {
+        display: none;
+    }
+    .line-up-l {
+        display: none;
+    }
+    .line-up-l-inner {
+        display: none;
+    }
+    .line-up-r {
+        display: none;
+    }
+    .line-up-r-inner {
+        display: none;
+    }
+
+}
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+    .login-reg-form {
+        width: 250px;
+        height: 450px;
+        margin-top: 130px;
+    }
+    
+    .line-d-l-lng {
+        display: none;
+    }
+    .line-d-l-shrt {
+        display: none;
+    }
+    .line-d-r {
+        display: none;
+    }
+    .line-d-r-inner {
+        display: none;
+    }
+    .line-up-l {
+        display: none;
+    }
+    .line-up-l-inner {
+        display: none;
+    }
+    .line-up-r {
+        display: none;
+    }
+    .line-up-r-inner {
+        display: none;
+    }
+
+    .login-reg-form h1 {
+        font-size: 24px;
+        width: 200px;
+    }
+ 
+    .login-reg-form input {
+        height: 40px;
+        width: 200px;
+    }
+    .login-reg-form ::placeholder {
+        font-size: 14px;
+        font-weight: 700;
+    }
 }

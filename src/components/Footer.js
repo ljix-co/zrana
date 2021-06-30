@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logo from '../logo.svg'
 import logo_lj from '../images/logo_lj.svg';
 import mars from '../images/mars.svg';
-import './Footer.css';
+import './style/Footer.css';
 import arrow from '../images/arrow_left.svg'
 const Footer = () => {
     const location = useLocation();

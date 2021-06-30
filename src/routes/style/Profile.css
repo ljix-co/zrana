@@ -1,0 +1,287 @@
+.add-new {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    width: 800px;
+    margin-top: 200px;
+}
+.add-new h1 {
+    font-size: 96px;
+    color: #94e314;
+    margin-left: 90px;
+}
+.add-new input {
+    margin-left: 90px;
+    /* height: 50px; */
+}
+.add-new label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 463px;
+    height: 80px;
+    background-color: rgba(255, 145, 77, 0.58);
+    text-align: center;
+    margin-left: 90px;
+}
+.add-new .fake-inpt {
+    margin-right: 200px;
+    color: white;
+}
+.add-btn {
+    background-color: #ff914d;
+    color: white;
+    width: 321px;
+    height: 100px;
+    margin: 90px;
+    font-size: 36px;
+    font-weight: 700;
+    border: none;
+    margin-top: 90px;
+}
+.add-new textarea {
+    margin-left: 90px;
+    background-color: rgba(255, 145, 77, 0.58);
+    width: 590px;
+    height: 300px;
+    border: none;
+    margin-bottom: 90px;
+}
+.add-new ::placeholder {
+    color: #ffffff;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+}
+.admin-inpt {
+    margin-bottom: 90px;
+}
+.admin-fake-inpt{
+    margin-top: 90px;
+}
+.profile {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 115px;
+}
+.profile h2 {
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.profile .ingrdnts {
+    margin-left: 90px;
+}
+.profile .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 65px;
+    margin-top: 200px;
+    margin-left: 53px;
+}
+.profile .prof-link {
+    width: 326px;
+    height: 82px;
+    background-color: #ff914d;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .add-new{
+        margin-top: 50px;
+    }
+    .profile {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+    }
+  
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .add-new {
+        width: 500px;
+        margin-top: 50px;
+    }
+    .add-new h1 {
+        font-size: 48px;
+    }
+    .add-new input {
+        margin-left: 30px;
+    }
+    .add-new label {
+        width: 400px;
+        height: 50px;
+        margin-left: 30px;
+    }
+    .add-new .fake-inpt {
+        margin-right: 200px;
+    }
+    .add-btn {
+        width: 200px;
+        height: 70px;
+        margin: 30px;
+        font-size: 24px;
+        margin-top: 30px;
+    }
+    .add-new textarea {
+        margin-left: 30px;
+        width: 450px;
+        height: 300px;
+    }
+    .add-new ::placeholder {
+        font-size: 14px;
+    }
+    .admin-inpt {
+        margin-bottom: 30px;
+    }
+    .admin-fake-inpt{
+        margin-top: 30px;
+    }
+    .profile {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+    }
+    .profile h2 {
+        font-size: 36px;
+    }
+    .profile .ingrdnts {
+        margin-left: 30px;
+    }
+ 
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .add-new {
+        width: 500px;
+        margin-top: 50px;
+    }
+    .add-new h1 {
+        font-size: 48px;
+    }
+    .add-new input {
+        margin-left: 30px;
+    }
+    .add-new label {
+        width: 400px;
+        height: 50px;
+        margin-left: 30px;
+    }
+    .add-new .fake-inpt {
+        margin-right: 200px;
+    }
+    .add-btn {
+        width: 200px;
+        height: 70px;
+        margin: 30px;
+        font-size: 24px;
+        margin-top: 30px;
+    }
+    .add-new textarea {
+        margin-left: 30px;
+        width: 450px;
+        height: 300px;
+    }
+    .add-new ::placeholder {
+        font-size: 14px;
+    }
+    .admin-inpt {
+        margin-bottom: 30px;
+    }
+    .admin-fake-inpt{
+        margin-top: 30px;
+    }
+    .profile {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+    }
+    .profile h2 {
+        font-size: 36px;
+    }
+    .profile .ingrdnts {
+        margin-left: 30px;
+    }
+ 
+}
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+    .add-new {
+        width: 250px;
+        margin-top: 30px;
+    }
+    .add-new h1 {
+        font-size: 18px;
+    }
+    .add-new input {
+        margin-left: 20px;
+        width: 200px;
+        
+    }
+    .add-new label {
+        width: 200px;
+        height: 50px;
+        margin-left: 20px;
+    }
+    .add-new .fake-inpt {
+        margin-right: 50px;
+       
+    }
+    .add-btn {
+        width: 200px;
+        height: 70px;
+        margin: 30px;
+        font-size: 24px;
+        margin-top: 30px;
+    }
+    .add-new textarea {
+        margin-left: 20px;
+        width: 200px;
+        height: 200px;
+    }
+    .add-new ::placeholder {
+        font-size: 12px;
+    }
+    .admin-inpt {
+        margin-bottom: 30px;
+        width: 200px;
+    }
+    .admin-fake-inpt{
+        margin-top: 30px;
+        /* width: 200px; */
+    }
+    .profile {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+    }
+    .profile h2 {
+        font-size: 36px;
+    }
+    .profile .info {
+       gap: 30px;
+       margin-top: 100px;
+       margin-left: 0;
+    }
+    .profile .ingrdnts {
+        margin-left: 20px;
+    }
+    .profile .prof-link{
+        width: 190px;
+        height: 50px;
+        font-size: 16px;
+    }
+}

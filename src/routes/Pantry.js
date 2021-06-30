@@ -1,52 +1,74 @@
 import logo_title from '../logo.svg';
 import search_ico from '../images/search_icon.svg';
-import plus_ico from '../images/plus button.svg';
-import exit_ico from '../images/exit button.svg';
 import './style/Pantry.css'
-import { useEffect, useState } from 'react';
-const Pantry = () => {
-    const [ingrdnts, setIngrdnts] = useState([]);
-    const [ingrdn, setIngrdn] = useState('');
-    const addIngrdnt = () => {
-        const newIngrdnts = ingrdnts;
-        const el = newIngrdnts.find(element => element === ingrdn.toUpperCase());
-        if (el === undefined) {
-            newIngrdnts.push(ingrdn.toUpperCase());
-            setIngrdnts(newIngrdnts);
-            setIngrdn('');
+import { useState } from 'react';
+import Ingridients from '../components/Ingredients';
+import axios from 'axios';
+import ListRecipes from '../components/ListRecipes';
+
+const Pantry = ({ bUrl }) => {
+    const [ingrdnts, setIngrdnts] = useState('');
+    const [recipes, setRec] = useState();
+    const [isPending, setIsPending] = useState(false);
+    const [noData, setNoData] = useState(false);
+
+    const handleIngrdnts = (ingrdnts) => {
+        setIngrdnts(ingrdnts.toString());
+    }
+    const getIngr = (recs) => {
+        for (let i = 0; i < recs.length; i++) {
+            let rec = recs[i];
+            rec.ings = [];
+             axios.get(bUrl + 'ingredients', { params: { rec_id: rec.rec_id } }).then(res => {
+                rec.ings = res.data.data;
+                
+                if (recs.indexOf(rec) === recs.length - 1) {
+                    setRec(recs);
+                   setTimeout(() => {
+                    setIsPending(false)
+                   }, 1000);
+                }
+            })
         }
     }
-    const deleteIng = (ing) => {
-        const newIngrdnts = ingrdnts.filter((e) => e !== ing);
-        setIngrdnts(newIngrdnts);
+    const getData = () => {
 
+        axios.get(bUrl + 'search_rec', { params: { ings: ingrdnts } }).then(res => {
+            console.log(res);
+            getIngr(res.data.data);
+
+            if(res.data.data.length == 0) {
+                setNoData(true);
+                setIsPending(false);
+            }
+
+        })
     }
 
+    const handleSearch = (e) => {
+        e.preventDefault();
+        setIsPending(true);
+        setNoData(false);
+        setRec([]);
+        getData();
+    }
+ 
     return (
         <div className="pantry">
             <div className="title">
                 <h1><img src={logo_title} alt="" /> RECEPTI PREMA SASTOJCIMA IZ VAŠE KUHINJE
-              </h1>
+                </h1>
                 <p>Unesite sastojke koje imate, a mi ćemo Vam odmah predložiti recepte.</p>
             </div>
-            <div className="search-field">
-                <input type="text"
-                    value={ingrdn}
-                    onChange={(e) => setIngrdn(e.target.value)}
-                    placeholder="Unesite sastojak" />
-                <button className="btn-search" onClick={addIngrdnt}><img src={plus_ico} alt="" /></button>
-            </div>
-            {ingrdnts && (
-                <div className="ingrdnts">
-                    {ingrdnts.map((ing) => (
-                        <div className="ing" key={ing}>
-                            <p>{ing}</p>
-                            <button className="btn-exit" onClick={() => deleteIng(ing)}><img src={exit_ico} alt="" /></button>
-                        </div>
-                    ))}
-                </div>
+            <Ingridients handleIngrdnts={handleIngrdnts} />
+            <button className="btn-search pntr-srch" onClick={handleSearch}><img src={search_ico} alt="" /></button>
+            {isPending && (
+                <h1>Učitavam...</h1>
             )}
-            <button className="btn-search"><img src={search_ico} alt="" /></button>
+            {noData && (
+                <h1>Žao nam je, ali trenutno nemamo u ponudi recepte za odabrane sastojke.</h1>
+            )}
+            {recipes && isPending === false && <ListRecipes recipes={recipes} bUrl={bUrl} />}
         </div>
     );
 }

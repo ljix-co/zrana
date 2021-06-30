@@ -4,7 +4,7 @@
     background-color: #94e314;
     position: fixed;
     top: 430px;
-    left: 1370px;
+    left: 95vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -144,7 +144,7 @@
     margin-bottom: 0;
 }
 .home .content-sub p {
-    width: 347px;
+    width: 300px;
     font-size: 14px;
     line-height: 30px;
     letter-spacing: 0.05em;
@@ -220,7 +220,7 @@
     gap: 142px;
     align-self: center;
 }
-.home .title{
+.home .title {
     margin-top: 200px;
     display: flex;
     flex-direction: column;
@@ -238,4 +238,403 @@
     font-size: 36px;
     line-height: 45px;
     color: #596f35;
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .home .floating-btn {
+        top: 350px;
+        left: 93vw;
+    }
+
+    .home .content-main {
+        gap: 90px;
+        width: 800px;
+    }
+    .home .content-main .l-side .img {
+        width: 350px;
+        position: absolute;
+        left: 20px;
+        top: 1100px;
+    }
+
+    .home .content-main .r-side a p {
+        font-size: 18px;
+    }
+    .home .content-sub {
+        width: 585px;
+    }
+    .home .content-sub a p {
+        font-size: 18px;
+    }
+    .home .content-sub .title {
+        width: 347px;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 50px;
+        letter-spacing: 0.05em;
+        margin: 68px;
+        margin-bottom: 23px;
+    }
+    .home .img-sub {
+        width: 351px;
+        position: absolute;
+        top: 2200px;
+        left: 520px;
+    }
+    .home .line-grn-l {
+        width: 265px;
+        height: 20px;
+        top: 378px;
+    }
+    .home .line-grn-s {
+        width: 182px;
+        height: 20px;
+        top: 500px;
+    }
+    .home .title {
+        margin-top: 150px;
+        margin-bottom: 150px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .home .floating-btn {
+        top: 300px;
+        left: 93vw;
+        width: 50px;
+    }
+
+    .home .content-main {
+        gap: 70px;
+        width: 500px;
+    }
+    .home .content-main h1 {
+    font-size: 18px;
+    width: 100px;
+    line-height: 40px;
+    }
+    .home .content-main .l-side {
+        width: 100px;
+    }
+    .home .content-main .l-side .logo{
+        width: 100px;
+    }
+    .home .content-main .l-side p{
+        width: 100px;
+        font-size: 40px;
+    }
+    .home .content-main .l-side .img {
+        width: 300px;
+        left: 20px;
+        top: 850px;
+    }
+    .home .content-main .r-side .link-orng,  .home .content-sub .link-orng {
+        width: 225px;
+        height: 54px;
+        gap: 20px;
+    }
+    .home .content-main .r-side .link-grn, .home .content-sub .link-grn {
+        width: 225px;
+        height: 54px;
+        gap: 20px;
+    }
+    .home .content-main .r-side {
+        width: 250px;
+    }
+    .home .content-main .r-side img{
+        width: 50px;
+    }
+    .home .content-main .r-side p {
+        width: 250px;
+        font-size: 12px;
+        line-height: 20px;
+        margin-bottom: 20px;
+    }
+    .home .content-main .r-side a p {
+        font-size: 12px;
+        margin-left: 30px;
+        width: 100px;
+    }
+    .home .content-sub {
+        width: 500px;
+        margin-left: -100px;
+    }
+    .home .content-sub a p {
+        font-size: 12px;
+        width: 70px;
+    }
+    .home .content-sub .title {
+        width: 200px;
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .home .content-sub p {
+        width: 200px;
+        font-size: 12px;
+        line-height: 20px;
+    }
+    .home .img-sub {
+        width: 251px;
+        position: absolute;
+        top: 1750px;
+        left: 420px;
+    }
+    .home .line-grn-l {
+        width: 210px;
+        height: 20px;
+        top: 378px;
+    }
+    .home .line-grn-s {
+        width: 120px;
+        height: 20px;
+        top: 450px;
+    }
+    .home .title {
+        margin-top: 150px;
+        margin-bottom: 80px;
+    }
+    .home .title img{
+      width: 290px;
+    }
+    .home .title p{
+        width: 400px;
+        font-size: 24px;
+      }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .home .floating-btn {
+        top: 220px;
+        left: 92vw;
+        width: 30px;
+        height: 150px;
+    }
+    .home .floating-btn a{
+        font-size: 18px;
+    }
+    .home .content-main {
+        gap: 70px;
+        width: 500px;
+    }
+    .home .content-main h1 {
+    font-size: 18px;
+    width: 100px;
+    line-height: 40px;
+    }
+    .home .content-main .l-side {
+        width: 100px;
+    }
+    .home .content-main .l-side .logo{
+        width: 100px;
+    }
+    .home .content-main .l-side p{
+        width: 100px;
+        font-size: 40px;
+    }
+    .home .content-main .l-side .img {
+        width: 200px;
+        left: 20px;
+        top: 700px;
+    }
+    .home .content-main .r-side .link-orng,  .home .content-sub .link-orng {
+        width: 225px;
+        height: 54px;
+        gap: 20px;
+    }
+    .home .content-main .r-side .link-grn, .home .content-sub .link-grn {
+        width: 225px;
+        height: 54px;
+        gap: 20px;
+    }
+    .home .content-main .r-side {
+        width: 250px;
+    }
+    .home .content-main .r-side img{
+        width: 50px;
+    }
+    .home .content-main .r-side p {
+        width: 250px;
+        font-size: 12px;
+        line-height: 20px;
+        margin-bottom: 20px;
+    }
+    .home .content-main .r-side a p {
+        font-size: 12px;
+        margin-left: 30px;
+        width: 100px;
+    }
+    .home .content-sub {
+        width: 500px;
+        margin-left: 0;
+    }
+    .home .content-sub a p {
+        font-size: 12px;
+        width: 70px;
+    }
+    .home .content-sub .title {
+        width: 200px;
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .home .content-sub p {
+        width: 200px;
+        font-size: 12px;
+        line-height: 20px;
+    }
+    .home .img-sub {
+        width: 151px;
+        position: absolute;
+        top: 1620px;
+        left: 370px;
+    }
+    .home .line-grn-l {
+        width: 100px;
+        height: 5px;
+        top: 250px;
+        left: -15px;
+    }
+    .home .line-grn-s {
+        width: 60px;
+        height: 5px;
+        top: 310px;
+        left: -10px;
+    }
+    .home .title {
+        margin-top: 50px;
+        margin-bottom: 80px;
+    }
+    .home .title img{
+      width: 290px;
+    }
+    .home .title p{
+        width: 400px;
+        font-size: 24px;
+      }
+}
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+    .home .floating-btn {
+        top: 120px;
+        left: 94vw;
+        width: 20px;
+        height: 120px;
+    }
+    .home .floating-btn a{
+        font-size: 12px;
+    }
+    .home .content-main {
+        gap: 20px;
+        width: 250px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .home .content-main h1 {
+    font-size: 18px;
+    width: 200px;
+    line-height: 40px;
+    margin-left: -50px;
+   
+    }
+    .home .content-main .l-side {
+        width: 100px;
+        margin-top: 30px;
+    }
+    .home .content-main .l-side .logo{
+        width: 100px;
+    }
+    .home .content-main .l-side p{
+        width: 100px;
+        font-size: 40px;
+    }
+    .home .content-main .l-side .img {
+        width: 200px;
+        /* left: 20px;
+        top: 700px; */
+        position: static;
+        margin-left: -50px;
+        margin-top: 30px;
+    }
+    .home .content-main .r-side .link-orng,  .home .content-sub .link-orng {
+        width: 225px;
+        height: 54px;
+        gap: 20px;
+    }
+    .home .content-main .r-side .link-grn, .home .content-sub .link-grn {
+        width: 225px;
+        height: 54px;
+        gap: 20px;
+    }
+    .home .content-main .r-side {
+        width: 200px;
+    }
+    .home .content-main .r-side img{
+        width: 50px;
+    }
+    .home .content-main .r-side p {
+        width: 190px;
+        font-size: 12px;
+        line-height: 20px;
+        margin-bottom: 20px;
+    }
+    .home .content-main .r-side a p {
+        font-size: 12px;
+        margin-left: 30px;
+        width: 100px;
+    }
+    .home .content-sub {
+        width: 250px;
+        margin-left: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 700px;
+    }
+    .home .content-sub a p {
+        font-size: 12px;
+        width: 70px;
+    }
+    .home .content-sub .link-grn, .home .content-sub .link-orng{
+        margin-left: 0;
+    }
+    .home .content-sub .title {
+        width: 200px;
+        font-size: 18px;
+        line-height: 30px;
+        margin: 0;
+    }
+    .home .content-sub p {
+        width: 200px;
+        font-size: 12px;
+        line-height: 20px;
+        margin-left: 0;
+    }
+    .home .img-sub {
+        width: 151px;
+        position: static;
+        /* top: 1620px;
+        left: 370px; */
+    }
+    .home .line-grn-l {
+        /* width: 50px;
+        height: 5px;
+        top: 210px;
+        left: -15px; */
+        display: none;
+    }
+    .home .line-grn-s {
+        /* width: 30px;
+        height: 5px;
+        top: 250px;
+        left: -10px; */
+        display: none;
+    }
+    .home .title {
+        margin-top: 0;
+        margin-bottom: 80px;
+    }
+    .home .title img{
+      width: 150px;
+    }
+    .home .title p{
+        width: 200px;
+        font-size: 14px;
+        line-height: 24px;
+      }
 }

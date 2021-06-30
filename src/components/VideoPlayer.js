@@ -22,7 +22,7 @@ class VideoPlayer extends React.Component {
         return (
             <div className="video">
                 <video ref={this.videoRef} 
-                src="../video/dodirkišnih_kapi.mp4" poster="../images/home_img2.png" 
+                src={this.props.video} poster={this.props.poster} 
                 onPause={this.pauseVideo} ></video>
                 <button ref={this.btnRef} className="play-btn" onClick={this.playVideo}><img className="play-ico" src={play_btn} alt="" /></button>
             </div>

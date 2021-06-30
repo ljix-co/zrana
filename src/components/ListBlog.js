@@ -1,70 +1,26 @@
-import play_btn from '../images/play button.svg';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import VideoPlayer from './VideoPlayer';
-const ListBlog = () => {
-    // const playVideo = () => {
-    //     this.refs.videoPlayer.play();
-    // }
+const ListBlog = ({ blogs }) => {
     return (
         <div className="list-blog">
-            <div className="blog">
-              <VideoPlayer/>
-                <div className="blog-dtls">
-                    <div className="rec-ta">
-                        <h2 className="rec-title">Rižoto sa tikvicama</h2>
-                        <p className="rec-author">Autor: Vanja Savić</p>
-                    </div>
-                    <ul className="rec-ingrdnts">
-                        <li>300gr priniča</li>
-                        <li>350gr piletine</li>
-                        <li>2 tikvice</li>
-                        <li>glavica crvenog luka</li>
-                        <li>2 crvene paprike</li>
-                        <li>so</li>
-                        <li>biber</li>
-                    </ul>
-                </div>
-            </div>
+            {blogs && blogs.map((blog) => (
 
+                <div className="blog" key={blog.bl_id}>
+                    <VideoPlayer video={blog.video_path} poster={blog.img_path} />
+                    <Link to={`/blog/${blog.bl_id}`}>
+                        <div className="blog-dtls">
+                            <div className="rec-ta">
+                                <h2 className="rec-title">{blog.bl_title}</h2>
+                                <p className="rec-author">Autor: {blog.bl_author}</p>
+                            </div>
+                            <ul className="rec-ingrdnts">
+                                {blog.ings && blog.ings.map((ing) => (<li key={blog.bl_id + ',' + ing.ing_id}>{ing.ing_name}</li>))}
 
-            <div className="blog">
-            <VideoPlayer/>
-                <div className="blog-dtls">
-                    <div className="rec-ta">
-                        <h2 className="rec-title">Rižoto sa tikvicama</h2>
-                        <p className="rec-author">Autor: Vanja Savić</p>
-                    </div>
-                    <ul className="rec-ingrdnts">
-                        <li>300gr priniča</li>
-                        <li>350gr piletine</li>
-                        <li>2 tikvice</li>
-                        <li>glavica crvenog luka</li>
-                        <li>2 crvene paprike</li>
-                        <li>so</li>
-                        <li>biber</li>
-                    </ul>
+                            </ul>
+                        </div>
+                    </Link>
                 </div>
-            </div>
-            <div className="blog">
-                <div className="video">
-                    <video src="../video/dodirkišnih_kapi.mp4" poster="../images/home_img1.png"></video>
-                    <button className="play-btn"><img className="play-ico" src={play_btn} alt="" /></button>
-                </div>
-                <div className="blog-dtls">
-                    <div className="rec-ta">
-                        <h2 className="rec-title">Rižoto sa tikvicama</h2>
-                        <p className="rec-author">Autor: Vanja Savić</p>
-                    </div>
-                    <ul className="rec-ingrdnts">
-                        <li>300gr priniča</li>
-                        <li>350gr piletine</li>
-                        <li>2 tikvice</li>
-                        <li>glavica crvenog luka</li>
-                        <li>2 crvene paprike</li>
-                        <li>so</li>
-                        <li>biber</li>
-                    </ul>
-                </div>
-            </div>
+            ))}
         </div>
     );
 }

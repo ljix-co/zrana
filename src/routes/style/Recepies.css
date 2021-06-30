@@ -49,3 +49,108 @@
     height: 560px;
     object-fit: cover;
 }
+.rec-title{
+    width: 300px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .recipe{
+        width: 726px;
+    }
+    .rec-dtls{
+        margin-left: 450px;
+    }
+    .rec-img{
+        margin-left: -70px;
+        width: 440px;
+    }
+    .rec-title{
+        width: 250px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+.btn-search{
+    height: 53px;
+  }
+  .btn-search img{
+    height: 40px;
+  }
+  .list-recipes{
+      gap: 70px;
+  }
+  .recipe{
+    width: 500px;
+    height: 550px;
+}
+.rec-dtls{
+    margin-left: 230px;
+    margin-top: 30px;
+}
+.rec-img{
+    margin-left: -70px;
+    width: 240px;
+    height: 390px;
+}
+.rec-title{
+    width: 250px;
+}
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .btn-search{
+        height: 53px;
+      }
+      .btn-search img{
+        height: 40px;
+      }
+      .list-recipes{
+          gap: 70px;
+      }
+      .recipe{
+        width: 500px;
+        height: 550px;
+    }
+    .rec-dtls{
+        margin-left: 230px;
+        margin-top: 30px;
+    }
+    .rec-img{
+        margin-left: -20px;
+        width: 200px;
+        height: 320px;
+    }
+    .rec-title{
+        width: 250px;
+    }
+    }
+    @media only screen and (min-width: 300px) and (max-width: 600px) {
+        .btn-search{
+            height: 45px;
+          }
+          .btn-search img{
+            height: 35px;
+          }
+          .list-recipes{
+              gap: 30px;
+          }
+          .recipe{
+            width: 250px;
+            height: auto;
+            flex-direction: column;
+        }
+        .rec-dtls{
+            margin-left: 25px;
+            margin-top: 0px;
+            margin-bottom: 20px;
+            order: 1;
+        }
+        .rec-img{
+            margin-left: 25px;
+            width: 200px;
+            height: 320px;
+            position: static;
+            margin-top: 0px;
+            order: 2;
+        }
+        .rec-title{
+            width: 200px;
+        }
+        }

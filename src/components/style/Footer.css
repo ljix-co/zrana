@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap");
+.bottom-div {
+    width: 100vw;
+    height: 542px;
+    background: linear-gradient(180deg, rgba(255, 145, 77, 0) 0.69%, #ff914d 8.5%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.b-bottom-div {
+    margin-top: 77px;
+    border-top: 1px solid #a95d2e;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.b-bottom-div p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    margin-top: 18px;
+    font-family: "ZCOOL QingKe HuangYou", cursive;
+}
+.b-bottom-div p .logo_lj {
+    height: 28px;
+}
+.b-bottom-div p .mars {
+    height: 18px;
+}
+.b-top-div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 492px;
+}
+.b-top-div .f-logo {
+    margin-top: 155px;
+}
+.footer-home {
+    position: absolute;
+    top: 3100px;
+    left: 0;
+    z-index: -2;
+}
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 57px;
+    margin-top: 110px;
+}
+.links .link {
+    width: 342px;
+    height: 104px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: rgba(244, 246, 237, 0.81);
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+    font-size: 24px;
+    font-weight: 700;
+    gap: 32px;
+}
+.link img {
+    width: 66px;
+}
+.link p {
+    width: 177px;
+    margin-left: 27px;
+    text-align: start;
+}
+
+.top-div {
+    width: 100vw;
+    height: 440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 86px;
+    background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0));
+}
+.top-div .top-div-title {
+    width: 558px;
+    font-size: 72px;
+    line-height: 90px;
+    font-weight: 700;
+    margin: 0;
+    margin-top: 110px;
+}
+.top-div .top-div-title-reg {
+    width: 700px;
+    font-size: 72px;
+    line-height: 90px;
+    font-weight: 700;
+    margin: 0;
+    margin-top: 20px;
+}
+.top-link {
+    width: 340px;
+    height: 122px;
+    background-color: #ff914d;
+    font-size: 72px;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.top-link-reg {
+    width: 600px;
+    height: 122px;
+    background-color: #ff914d;
+    font-size: 72px;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .b-top-div {
+        gap: 250px;
+    }
+    .b-top-div .f-logo {
+        margin-top: 155px;
+    }
+    .footer-home {
+        top: 2900px;
+    }
+    .links .link {
+        width: 242px;
+        height: 74px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background: rgba(244, 246, 237, 0.81);
+        box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+        font-size: 24px;
+        font-weight: 700;
+        gap: 32px;
+    }
+    .link img {
+        width: 36px;
+    }
+    .link p {
+        width: 127px;
+        margin-left: 27px;
+        text-align: start;
+        font-size: 14px;
+    }
+
+    .top-div .top-div-title {
+        font-size: 64px;
+    }
+    .top-div .top-div-title-reg {
+        font-size: 64px;
+    }
+    .top-link {
+        font-size: 64px;
+    }
+    .top-link-reg {
+        font-size: 64px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .b-top-div {
+        gap: 50px;
+    }
+    .b-top-div .f-logo {
+        margin-top: 155px;
+    }
+    .footer-home {
+        top: 2500px;
+    }
+    .links .link {
+        width: 242px;
+        height: 74px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background: rgba(244, 246, 237, 0.81);
+        box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+        font-size: 24px;
+        font-weight: 700;
+        gap: 32px;
+    }
+    .link img {
+        width: 36px;
+    }
+    .link p {
+        width: 127px;
+        margin-left: 27px;
+        text-align: start;
+        font-size: 14px;
+    }
+
+    .top-div .top-div-title {
+        font-size: 64px;
+    }
+    .top-div .top-div-title-reg {
+        font-size: 64px;
+    }
+    .top-link {
+        font-size: 64px;
+    }
+    .top-link-reg {
+        font-size: 64px;
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .bottom-div {
+        height: 430px;
+    }
+    .b-bottom-div p {
+        font-size: 14px;
+    }
+    .b-bottom-div p .logo_lj {
+        height: 18px;
+    }
+    .b-bottom-div p .mars {
+        height: 14px;
+    }
+    .b-top-div {
+        gap: 50px;
+    }
+    .b-top-div .f-logo {
+        margin-top: 130px;
+        width: 200px;
+    }
+    .footer-home {
+        top: 2500px;
+    }
+    .links .link {
+        width: 190px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background: rgba(244, 246, 237, 0.81);
+        box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+        font-size: 24px;
+        font-weight: 700;
+        gap: 15px;
+    }
+    .link img {
+        width: 36px;
+    }
+    .link p {
+        width: 100px;
+        margin-left: 10px;
+        text-align: start;
+        font-size: 14px;
+    }
+
+    .top-div .top-div-title {
+        font-size: 48px;
+    }
+    .top-div .top-div-title-reg {
+        font-size: 48px;
+    }
+    .top-link {
+        font-size: 48px;
+        width: 220px;
+        height: 80px;
+    }
+    .top-link-reg {
+        font-size: 48px;
+        width: 350px;
+        height: 80px;
+    }
+}
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+    .bottom-div {
+        height: 430px;
+    }
+    .b-bottom-div p {
+        font-size: 12px;
+        flex-wrap: wrap;
+    }
+    .b-bottom-div p .logo_lj {
+        height: 18px;
+    }
+    .b-bottom-div p .mars {
+        height: 12px;
+    }
+    .b-top-div {
+        gap: 0px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .b-top-div .f-logo {
+        margin-top: 50px;
+
+        width: 150px;
+    }
+    .footer-home {
+        top: 2590px;
+    }
+    .links {
+        margin-top: 20px;
+        gap: 20px;
+    }
+    .links .link {
+        width: 190px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background: rgba(244, 246, 237, 0.81);
+        box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+        font-size: 24px;
+        font-weight: 700;
+        gap: 15px;
+    }
+    .link img {
+        width: 36px;
+    }
+    .link p {
+        width: 100px;
+        margin-left: 10px;
+        text-align: start;
+        font-size: 14px;
+    }
+    .top-div {
+        height: 250px;
+        gap: 20px;
+    }
+    .top-div .top-div-title {
+        font-size: 28px;
+        margin-top: 0;
+    }
+    .top-div .top-div-title-reg {
+        font-size: 28px;
+    }
+    .top-link {
+        font-size: 28px;
+        width: 190px;
+        height: 60px;
+    }
+    .top-link-reg {
+        font-size: 28px;
+        width: 210px;
+        height: 60px;
+    }
+}

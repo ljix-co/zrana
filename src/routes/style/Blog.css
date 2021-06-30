@@ -1,35 +1,73 @@
-.blogs video{
+.blogs video {
     width: 477px;
     height: 310px;
     object-fit: contain;
-    background-color: #F4F6ED;
+    background-color: #f4f6ed;
 }
-.blogs{
+.blogs {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.blog{
+.blog {
     width: 477px;
     height: 682px;
     background-color: white;
     text-align: start;
 }
-.blog-dtls{
+.blog-dtls {
     margin-left: 55px;
 }
-.list-blog{
+.list-blog {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 100px;
 }
-.play-btn{
+.play-btn {
     border: none;
     background-color: transparent;
     position: absolute;
-    margin-left: -300px;
+    margin-left: -310px;
     margin-top: 100px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .blogs video {
+        width: 277px;
+        height: 210px;
+    }
+    .blog {
+        width: 277px;
+        height: 590px;
+    }
+    .blog-dtls {
+        margin-left: 35px;
+    }
+    .play-btn {
+        margin-left: -210px;
+        margin-top: 50px;
+    }
+}
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+    .blogs video {
+        width: 250px;
+        height: 210px;
+    }
+    .blog {
+        width: 250px;
+        height: 590px;
+    }
+    .blog-dtls {
+        margin-left: 35px;
+    }
+    .play-btn {
+        margin-left: -180px;
+        margin-top: 60px;
+        width: 100px;
+    }
+    .play-ico{
+        width: 100px;
+    }
 }
