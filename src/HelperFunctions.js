@@ -22,16 +22,43 @@ export function getIngr(recs, bUrl, setData, setIsPending, axios) {
     }
 }
 
-export function findRecBlog(title, setData, array) {
+export function findRecBlog(srch_txt, setData, array) {
 
     let found = [];
 
     if (array[0].bl_title) {
-        found = array.filter(el => el.bl_title.toUpperCase() === title.toUpperCase());
+
+        found = array.filter(el => el.bl_title.toUpperCase() === srch_txt.toUpperCase()
+            || el.author.toUpperCase() === srch_txt.toUpperCase());
     }
     else if (array[0].rec_title) {
-        found = array.filter(el => el.rec_title.toUpperCase() === title.toUpperCase());
+        let all_srch_words = srch_txt.split(' ');
+        let srch_words = all_srch_words.filter(srch_w => srch_w !== 'sa' && srch_w !== 'bez' && srch_w !== 'i');
+
+        found = array.filter(el => {
+             el.words_title = el.rec_title.split(' ');
+             el.words_author = el.author.split(' ');
+         for(let i = 0; i < el.words_title.length; i++) {
+             for(let j = 0; j < srch_words.length; j++) {
+                 if(el.words_title[i].toUpperCase() === srch_words[j].toUpperCase()) {
+                     
+                     return el;
+                 }
+                
+             }
+         }
+         for(let i = 0; i < el.words_author.length; i++) {
+            for(let j = 0; j < srch_words.length; j++) {
+                if(el.words_author[i].toUpperCase() === srch_words[j].toUpperCase()) {
+                   
+                    return el;
+                }
+               else {
+                   return null;
+               }
+            }
+        }
+        });
     }
-    let newArr = found;
-    setData(newArr);
+    setData(found.sort());
 }

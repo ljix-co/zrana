@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import plus_ico from '../images/plus button.svg';
 import Ingridients from '../components/Ingredients';
+import Modal from '../components/Modal';
 import './style/Profile.css'
 import { NavLink, useHistory } from 'react-router-dom';
 import axios from 'axios';
@@ -15,7 +16,14 @@ const Profile = ({ bUrl, user, setUser, setLoggedIn }) => {
     const [newIngrdnts, setNewIngrdnts] = useState([]);
     const [resetIngrdnts, setReset] = useState(0);
     const [isPending, setIsPending] = useState(false);
+    const [noData, setNoData] = useState(false);
+    const message = 'Niste uneli sve podatke. Popunite sva polja pa pokušajte ponovo.'
     const history = useHistory();
+
+    const handleOk = () => {
+        setNoData(false);
+        setIsPending(false)
+    }
 
     const handleLogOut = () => {
         let formData = new FormData();
@@ -31,79 +39,98 @@ const Profile = ({ bUrl, user, setUser, setLoggedIn }) => {
 
         setIsPending(true);
 
-        if (user.usr_admin != 1) {
-            let formData = new FormData();
-            formData.append('rec_title', rec_title);
-            formData.append('rec_txt', rec_txt);
-            formData.append('rec_healthy', rec_healthy);
-            formData.append('rec_img', rec_img);
-            formData.append('usr_id', user.usr_id);
-            formData.append('sid', localStorage.getItem('sid'));
-
-            axios.post(bUrl + 'recipes', formData).then(res => {
-                console.log(res)
-                setTitle('');
-                setTxt('');
-                setHealthy('');
-                let triggerNum = resetIngrdnts;
-                setImg(null);
-                setReset(triggerNum += 1);
-                let id = res.data.id;
-                setIsPending(false);
-                if (newIngrdnts.length > 0) {
-                    newIngrdnts.forEach(e => {
-                        let ingFormData = new FormData();
-                        ingFormData.append('rec_id', id);
-                        ingFormData.append('ing_name', e);
-                        ingFormData.append('sid', localStorage.getItem('sid'));
-                        axios.post(bUrl + 'ingredients', ingFormData).then(res => {
-                            console.log(res);
-
-                        })
-                    })
-                }
-            })
+        if (rec_title === '' || rec_txt === '' || rec_healthy === '' || rec_img === null || newIngrdnts.length === 0) {
+            setNoData(true);
         }
-        else if (user.usr_admin == 1) {
-            let formData = new FormData();
-            formData.append('bl_title', rec_title);
-            formData.append('bl_txt', rec_txt);
-            formData.append('bl_healthy', rec_healthy);
-            formData.append('bl_img', rec_img);
-            formData.append('bl_author', bl_author);
-            formData.append('bl_video', bl_video);
-            formData.append('sid', localStorage.getItem('sid'));
+        else {
+            if (user.usr_admin !== 1) {
+                let formData = new FormData();
+                formData.append('rec_title', rec_title);
+                formData.append('rec_txt', rec_txt);
+                formData.append('rec_healthy', rec_healthy);
+                formData.append('rec_img', rec_img);
+                formData.append('usr_id', user.usr_id);
+                formData.append('sid', localStorage.getItem('sid'));
 
-            axios.post(bUrl + 'blog', formData).then(res => {
-                console.log(res)
-                setTitle('');
-                setTxt('');
-                setHealthy('');
-                let triggerNum = resetIngrdnts;
-                setImg(null);
-                setVideo(null);
-                setAuthor('');
-                setReset(triggerNum += 1);
-                let id = res.data.id;
-                setIsPending(false);
-                if (newIngrdnts.length > 0) {
-                    newIngrdnts.forEach(e => {
-                        let ingFormData = new FormData();
-                        ingFormData.append('bl_id', id);
-                        ingFormData.append('ing_name', e);
-                        ingFormData.append('sid', localStorage.getItem('sid'));
-                        axios.post(bUrl + 'ingredients', ingFormData).then(res => {
-                            console.log(res);
+                axios.post(bUrl + 'recipes', formData).then(res => {
+                    console.log(res)
+                    setTitle('');
+                    setTxt('');
+                    setHealthy('');
+                    let triggerNum = resetIngrdnts;
+                    setImg(null);
+                    setReset(triggerNum += 1);
+                    let id = res.data.id;
+                    setIsPending(false);
+                    if (newIngrdnts.length > 0) {
+                        newIngrdnts.forEach(e => {
+                            let ingFormData = new FormData();
+                            ingFormData.append('rec_id', id);
+                            ingFormData.append('ing_name', e);
+                            ingFormData.append('sid', localStorage.getItem('sid'));
+                            axios.post(bUrl + 'ingredients', ingFormData).then(res => {
+                                console.log(res);
 
+                            })
                         })
+                    }
+                })
+            }
+            else if (user.usr_admin === 1) {
+                if (bl_video === null || bl_author === '') {
+                    setNoData(true);
+                }
+                else {
+                    let formData = new FormData();
+                    formData.append('bl_title', rec_title);
+                    formData.append('bl_txt', rec_txt);
+                    formData.append('bl_healthy', rec_healthy);
+                    formData.append('bl_img', rec_img);
+                    formData.append('bl_author', bl_author);
+                    formData.append('bl_video', bl_video);
+                    formData.append('sid', localStorage.getItem('sid'));
+
+                    axios.post(bUrl + 'blog', formData).then(res => {
+                        console.log(res)
+                        setTitle('');
+                        setTxt('');
+                        setHealthy('');
+                        let triggerNum = resetIngrdnts;
+                        setImg(null);
+                        setVideo(null);
+                        setAuthor('');
+                        setReset(triggerNum += 1);
+                        let id = res.data.id;
+                        setIsPending(false);
+                        if (newIngrdnts.length > 0) {
+                            newIngrdnts.forEach(e => {
+                                let ingFormData = new FormData();
+                                ingFormData.append('bl_id', id);
+                                ingFormData.append('ing_name', e);
+                                ingFormData.append('sid', localStorage.getItem('sid'));
+                                axios.post(bUrl + 'ingredients', ingFormData).then(res => {
+                                    console.log(res);
+
+                                })
+                            })
+                        }
                     })
                 }
-            })
+            }
         }
     }
     const handleIngrdnts = (ingrdnts) => {
         setNewIngrdnts(ingrdnts);
     }
+
+    useEffect(() => {
+        function chckUser() {
+            if(user === {}) {
+                history.push('/');
+            }
+        }
+        chckUser();
+    }, [])
 
     return (
         <div className="profile">
@@ -112,14 +139,15 @@ const Profile = ({ bUrl, user, setUser, setLoggedIn }) => {
                 <NavLink to="/usr_rec" className="prof-link">OBJAVLJENI RECEPTI</NavLink>
                 <button className="prof-link" onClick={handleLogOut}>ODJAVI SE</button>
             </div>
+            {noData && <Modal message={message} handleOk={handleOk}/>}
             <div className="add-new">
                 <h1>NOVI RECEPT</h1>
                 {user.usr_admin == 1 && (
-                    
-                        <input className="admin-inpt"
-                            onChange={(e) => { setAuthor(e.target.value) }}
-                            type="text" placeholder="ORIGINALNI AUTOR" />
-                    
+
+                    <input className="admin-inpt"
+                        onChange={(e) => { setAuthor(e.target.value) }}
+                        type="text" placeholder="ORIGINALNI AUTOR" />
+
                 )}
                 <input
                     value={rec_title}
@@ -150,7 +178,7 @@ const Profile = ({ bUrl, user, setUser, setLoggedIn }) => {
                             id="inpt-video" type="file" hidden />
                     </div>
                 )}
-                <button className="add-btn" onClick={handleSubmit}>{ isPending ? 'Dodaje se...' :  'DODAJ'}</button>
+                <button className="add-btn" onClick={handleSubmit}>{isPending ? 'Dodaje se...' : 'DODAJ'}</button>
             </div>
         </div>
     );

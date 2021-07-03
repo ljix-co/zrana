@@ -24,11 +24,10 @@ const Login = ({ bUrl, setLoggedIn, setUser }) => {
             axios.post(bUrl + 'login', formData).then(res => {
                 console.log(res);
                 if (res.data.msg === 'OK') {
-                    history.push('/profile');
                     setLoggedIn(true);
                     localStorage.setItem('sid', res.data.sid);
                     setUser(res.data.user)
-                    
+                    history.push('/profile');
                 }
                 else {
                     setMessage('Korisničko ime ili lozinka su neispravni!');

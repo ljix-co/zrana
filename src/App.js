@@ -1,7 +1,8 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
+  Redirect,
   Switch,
   Route
 } from 'react-router-dom';
@@ -19,24 +20,26 @@ import UserRec from './routes/UserRec';
 import ChosenRec from './routes/ChosenRec';
 import ChosenBlog from './routes/ChosenBlog';
 import ScrollToTop from './ScrollToTop';
-import { CSSTransition } from 'react-transition-group';
+import NotFound from './routes/NotFound';
 
 function App() {
   const [bUrl] = useState('http://323k122.mars1.mars-hosting.com/api/');
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState({});
-  // const [inProp, setInProp] = useState(false);
+  const [existing_route, setExstingRoute] = useState(true);
   const routes = [
-    {path: '/', name: 'početna', Component: Home},
-    {path: '/recipes', name: 'recepti', Component: Recepies},
-    {path: '/recipes/:id', name: 'recept_id', Component: ChosenRec},
-    {path: '/blog', name: 'blog', Component: Blog},
-    {path: '/blog/:id', name: 'blog_id', Component: ChosenBlog},
-    {path: '/pantry', name: 'špajz', Component: Pantry},
-    {path: '/login', name: 'login', Component: Login},
-    {path: '/registration', name: 'registracija', Component: Registration},
-    {path: '/profile', name: 'profil', Component: Profile},
-    {path: '/usr_rec', name: 'user_rec', Component: UserRec}
+    { path: '/', name: 'početna', Component: Home },
+    { path: '/recipes', name: 'recepti', Component: Recepies },
+    { path: '/recipes/:id', name: 'recept_id', Component: ChosenRec },
+    { path: '/blog', name: 'blog', Component: Blog },
+    { path: '/blog/:id', name: 'blog_id', Component: ChosenBlog },
+    { path: '/pantry', name: 'špajz', Component: Pantry },
+    { path: '/login', name: 'login', Component: Login },
+    { path: '/registration', name: 'registracija', Component: Registration },
+    { path: '/profile', name: 'profil', Component: Profile },
+    { path: '/usr_rec', name: 'user_rec', Component: UserRec },
+    // { path: '*', name: 'not_found', Component: NotFound },
+    // { path: '/404', name: 'not_found', Component: NotFound }
   ]
 
   useEffect(() => {
@@ -50,72 +53,57 @@ function App() {
       if (localStorage.getItem('sid')) {
         localStorage.removeItem('sid');
       }
-
+      console.log(user)
     })
   }, [])
 
+  useEffect(() => {
+    function chckRoute() {
+     const path = routes.find(el => el.path === window.location.pathname);
+     console.log(window.location.href)
+     if(path === undefined) {
+       setExstingRoute(false);
+     }
+     if(path !== undefined) {
+      setExstingRoute(true);
+    }
+    }
+    
+    window.addEventListener('hashchange', chckRoute);
+
+    chckRoute();
+
+    return () => {
+      window.removeEventListener('hashchange', chckRoute);
+    }
+
+  }, [])
 
   return (
     <Router>
       <div className="App">
         <Navbar loggedIn={loggedIn} />
-        <Fragment>
           <ScrollToTop />
-          {/* <Switch>
-            <Route exact path="/">
-              <CSSTransition in={inProp} timeout={200} classNames="my-node">
-
-                <Home />
-              </CSSTransition>
-            </Route>
+          <Switch>
+          {existing_route && routes.map(({ path, Component }) => (
            
-            <Route exact path="/recipes">
-              <Recepies bUrl={bUrl} />
-            </Route>
-            <Route path="/recipes/:id">
-              <ChosenRec bUrl={bUrl} />
-            </Route>
-            <Route exact path="/blog">
-              <Blog bUrl={bUrl} />
-            </Route>
-            <Route path="/blog/:id">
-              <ChosenBlog bUrl={bUrl} />
-            </Route>
-            <Route path="/pantry">
-              <Pantry bUrl={bUrl} />
-            </Route>
-            <Route path="/login">
-              <Login bUrl={bUrl} setLoggedIn={setLoggedIn} setUser={setUser} />
-            </Route>
-            <Route path="/registration">
-              <Registration bUrl={bUrl} />
-            </Route>
-            <Route path="/profile">
-              <Profile bUrl={bUrl} user={user} setUser={setUser} setLoggedIn={setLoggedIn} />
-            </Route>
-            <Route path="/usr_rec">
-              <UserRec bUrl={bUrl} user={user} />
-            </Route>
-              {({ match }) => (
-                // <CSSTransition
-                //   in={match != null}
-                //   timeout={300}
-                //   classNames="page"
-                //   unmountOnExit
-                // >
+              <Route key={path} exact path={path} >
+                <div className="page">
+                  {path === '/profile' || path === '/usr_rec' ?
+                    (Object.keys(user).length !== 0 ? (<Component bUrl={bUrl} user={user} setUser={setUser} setLoggedIn={setLoggedIn} />) :
+                      (<Redirect to="/login" />)) : (<Component bUrl={bUrl} user={user} setUser={setUser} setLoggedIn={setLoggedIn} />)
+                  }
+                </div>
 
-                
-          </Switch> */}
-               {routes.map(({ path, Component }) => (
-            <Route key={path} exact path={path}>
-            
-                  <div className="page">
-                    <Component bUrl={bUrl} user={user} setUser={setUser} setLoggedIn={setLoggedIn}/>
-                  </div>
-             
-            </Route>
+              </Route>
+              
           ))}
-        </Fragment>
+            { existing_route === false &&
+              <Route path='*'>
+              <NotFound/>
+            </Route>
+            }
+            </Switch>
         <Footer />
       </div>
     </Router>

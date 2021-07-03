@@ -24,17 +24,18 @@ const UserRec = ({ bUrl, user }) => {
     const getData = () => {
         setIsPending(true);
         setNoData(false);
-        
-        axios.get(bUrl + 'usr_published', { params: { sid: localStorage.getItem('sid') } }).then(res => {
 
+        axios.get(bUrl + 'usr_published', { params: { sid: localStorage.getItem('sid') } }).then(res => {
+            console.log(res)
             let published_c = res.data.data;
 
             if (res.data.data.length > 0) {
                 published_c.forEach((el) => {
                     el.ing = [];
-                    axios.get(bUrl + 'ingredients', { params: { bl_id: el.bl_id } }).then(res => {
+                    axios.get(bUrl + 'ingredients', { params: { rec_id: el.rec_id } }).then(res => {
                         console.log(res);
                         el.ing = res.data.data;
+
 
                         setPublished(published_c);
 
@@ -62,12 +63,12 @@ const UserRec = ({ bUrl, user }) => {
                     <h1>Učitavam...</h1>
                 </div>
             )}
-              {noData && user.usr_admin === 0 && (
+            {noData && user.usr_admin === 0 && (
                 <div className="is-pending">
                     <h1>Još uvek niste objavili ni jedan recept. Vratite se na prethodnu stranu i popunite formu za dodavanje recepta.</h1>
                 </div>
             )}
-             {noData && user.usr_admin === 1 && (
+            {noData && user.usr_admin === 1 && (
                 <div className="is-pending">
                     <h1>Još uvek niste objavili ni jedan blog. Vratite se na prethodnu stranu i popunite formu za dodavanje bloga.</h1>
                 </div>
@@ -101,8 +102,38 @@ const UserRec = ({ bUrl, user }) => {
                         </div>
                     )}
                 </div>)}
+            {isPending === false && user.usr_admin === 0 && (
+                <div className="published-blog">
+                    {published && (
+                        <div className="admin-blogs">
+                            {published.map((pub) => (
+                                <div className="admin-blog" key={pub.rec_id}>
+                                    <img className="usr-rec-img" src={pub.img_path} alt="" />
+                                    {pub.ing && (
+                                        <div className="admin-blog-dtls">
+                                            <div className="rec-ta-div">
+                                                <h2 className="admin-rec-title">{pub.rec_title}</h2>
+                                                <p className="rec-author">Autor: {pub.rec_author} </p>
+                                            </div>
+                                            <ul className="rec-ingrdnts">
+                                                {pub.ing && pub.ing.map((ing) => (
+                                                    <li key={ing.ing_id + ',' + pub.rec_id}>{ing.ing_name}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    )}
+                                    <div className="btns">
+                                        <button className="btn-del" onClick={() => { handleDelete(pub.rec_id) }}>IZBRIŠI</button>
+                                        {/* <button className="btn-edit">UREDI</button> */}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>)}
         </div>
     );
+
 }
 
 export default UserRec;

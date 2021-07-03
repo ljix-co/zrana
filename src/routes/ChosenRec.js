@@ -25,7 +25,7 @@ const ChosenRec = ({bUrl}) => {
                 <h1>Učitavam...</h1>
             )}
             {recipe && recipe.map((recipe) =>(
-                <div className="chosen">
+                <div className="chosen" key={recipe.rec_id}>
                    <div className="l-side">
                    <h1>{recipe.rec_title}</h1>
                    <h3>Autor: {recipe.author}</h3>

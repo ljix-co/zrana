@@ -184,6 +184,21 @@ p {
   align-items: flex-end;
   gap: 52px;
 }
+.not-found{
+  margin-top: 150px;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.not-found h3{
+  color: #94e314;
+  cursor: pointer;
+}
+.not-found h1{
+  color: #ff914d;
+}
 .prof-icon {
   margin-bottom: -10px;
   width: 30px;
@@ -346,6 +361,7 @@ p {
     margin-right: 110px;
     gap: 30px;
   }
+
   .prof-icon {
     margin-bottom: -10px;
     width: 30px;

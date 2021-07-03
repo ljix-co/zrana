@@ -31,7 +31,6 @@ const Navbar = ({ loggedIn }) => {
                     setClassName('mob-nav-hidden')
                 }
                 setPathName(location.pathname);
-                console.log(location.pathname + 'vs' + pathName)
             }
         })
        

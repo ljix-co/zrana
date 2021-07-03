@@ -1,6 +1,7 @@
 
 .admin-blogs{
     margin-top: 50px;
+    margin-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -15,10 +16,11 @@
 }
 .admin-blog{
     width: 477px;
-    height: 682px;
+    height: 782px;
     background-color: white;
     text-align: start;
     position: static;
+    
 }
 .admin-blog-dtls{
     margin-left: 55px;
@@ -61,6 +63,9 @@
     color: white;
     border: none;
     font-weight: 700;
+}
+.usr-rec-img{
+    width: 477px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
     .admin-blogs{
@@ -123,7 +128,7 @@
     }
     .admin-blog-dtls{
         margin-left: 25px;
-        height: 280px;
+        height: auto;
     }
     .admin-rec-title{
         width: 200px;
@@ -131,6 +136,7 @@
     .user-rec{
         margin-top: 90px;
     }
+  
     .user-rec .btns {
         position: static;
         margin-top: 0;
@@ -151,5 +157,8 @@
         color: white;
         border: none;
         font-weight: 700;
+    }
+    .usr-rec-img{
+        width: 250px;
     }
 }
