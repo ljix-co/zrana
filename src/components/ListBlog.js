@@ -14,7 +14,7 @@ const ListBlog = ({ blogs }) => {
                                 <p className="rec-author">Autor: {blog.bl_author}</p>
                             </div>
                             <ul className="rec-ingrdnts">
-                                {blog.ings && blog.ings.map((ing) => (<li key={blog.bl_id + ',' + ing.ing_id}>{ing.ing_name}</li>))}
+                                {blog.ings && blog.ings.map((ing) => (<li key={blog.bl_id + ',' + ing.ing_id}>{ing.ing_name.toLowerCase()}</li>))}
 
                             </ul>
                         </div>

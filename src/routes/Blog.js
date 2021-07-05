@@ -4,6 +4,7 @@ import './style/Blog.css'
 import ListBlog from '../components/ListBlog';
 import { useEffect, useState } from 'react';
 import { getIngr, findRecBlog } from '../HelperFunctions';
+import {Helmet} from 'react-helmet';
 import axios from 'axios';
 const Blog = ({ bUrl }) => {
 
@@ -31,6 +32,11 @@ const Blog = ({ bUrl }) => {
 
     return (
         <div className="blogs">
+            <Helmet>
+                <meta name="description" content="Z'Rana spremljena u našoj kuhinji, a prema receptima registrovanih korisnika."/>
+                <meta id="og-title" property="og:title" content="Z'RANA blog"/>
+                <meta id="og-image" property="og:image" content={logo_title} />
+            </Helmet>
             <div className="title">
                 <h1> NAŠA <img src={logo_title} alt="" /> PREMA VAŠIM RECEPTIMA
                 </h1>

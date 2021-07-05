@@ -2,6 +2,7 @@ import axios from 'axios';
 import './style/UserRec.css'
 import VideoPlayer from '../components/VideoPlayer';
 import { useEffect, useState } from 'react';
+import { getIngr } from '../HelperFunctions';
 const UserRec = ({ bUrl, user }) => {
     const [published, setPublished] = useState([]);
     const [isPending, setIsPending] = useState(false);
@@ -29,27 +30,52 @@ const UserRec = ({ bUrl, user }) => {
             console.log(res)
             let published_c = res.data.data;
 
-            if (res.data.data.length > 0) {
-                published_c.forEach((el) => {
-                    el.ing = [];
-                    axios.get(bUrl + 'ingredients', { params: { rec_id: el.rec_id } }).then(res => {
-                        console.log(res);
-                        el.ing = res.data.data;
-
-
-                        setPublished(published_c);
-
-                        setTimeout(() => {
-                            setIsPending(false);
-                        }, 1000);
-
-                    })
-                })
-            }
             if (res.data.data.length === 0) {
                 setNoData(true)
                 setIsPending(false);
             }
+            else {
+                // getIngr(published_c, bUrl, setPublished, setIsPending, axios)
+                published_c.forEach((el) => {
+                    el.ing = [];
+                    let id = null;
+                    // let param_name = '';
+                    if (el.rec_id) {
+                        id = el.rec_id;
+                        axios.get(bUrl + 'ingredients', { params: { rec_id: id } }).then(res => {
+                            console.log(res);
+                            el.ing = res.data.data;
+    
+    
+    
+                            setPublished(published_c);
+    
+                            setTimeout(() => {
+                                setIsPending(false);
+                            }, 1000);
+    
+                        })
+                    }
+                    else {
+                        id = el.bl_id;
+                        axios.get(bUrl + 'ingredients', { params: { bl_id: id } }).then(res => {
+                            console.log(res);
+                            el.ing = res.data.data;
+    
+    
+    
+                            setPublished(published_c);
+    
+                            setTimeout(() => {
+                                setIsPending(false);
+                            }, 1000);
+    
+                        })
+                    }
+                
+                })
+            }
+
         })
     }
     useEffect(() => {
@@ -88,7 +114,7 @@ const UserRec = ({ bUrl, user }) => {
                                             </div>
                                             <ul className="rec-ingrdnts">
                                                 {pub.ing && pub.ing.map((ing) => (
-                                                    <li key={ing.ing_id + ',' + pub.bl_id}>{ing.ing_name}</li>
+                                                    <li key={ing.ing_id + ',' + pub.bl_id}>{ing.ing_name.toLowerCase()}</li>
                                                 ))}
                                             </ul>
                                         </div>

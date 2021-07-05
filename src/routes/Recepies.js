@@ -5,6 +5,7 @@ import ListRecipes from '../components/ListRecipes';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import {  getIngr, findRecBlog } from '../HelperFunctions';
+import {Helmet} from 'react-helmet';
 
 const Recepies = ({bUrl}) => {
 
@@ -33,6 +34,11 @@ const Recepies = ({bUrl}) => {
 
     return (
         <div className="recepies">
+            <Helmet>
+                <meta name="description" content="Z'Rana recepti registrovanih korisnika."/>
+                <meta id="og-title" property="og:title" content="Z'RANA recepti"/>
+                <meta id="og-image" property="og:image" content={logo_title} />
+            </Helmet>
             <div className="title">
                 <h1> VAŠA <img src={logo_title} alt="" /> NA VAŠ NAČIN
               </h1>

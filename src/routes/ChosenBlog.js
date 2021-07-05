@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getIngr } from "../HelperFunctions";
 import axios from 'axios';
+import {Helmet} from 'react-helmet';
 import './style/Chosen.css';
 
 const ChosenBlog = ({ bUrl }) => {
@@ -25,6 +26,12 @@ const ChosenBlog = ({ bUrl }) => {
             {isPending && (
                 <h1>Učitavam...</h1>
             )}
+             {blog &&
+                <Helmet>
+                    <meta name="description" content="Z'Rana recepti registrovanih korisnika." />
+                    <meta id="og-title" property="og:title" content={blog[0].bl_title} />
+                    <meta id="og-image" property="og:image" content={blog[0].img_path} />
+                </Helmet>}
             {blog && blog.map((blog) => (
                 <div className="chosen">
                     <div className="l-side">

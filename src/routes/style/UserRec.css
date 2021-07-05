@@ -66,6 +66,9 @@
 }
 .usr-rec-img{
     width: 477px;
+    height: 400px;
+    object-fit: contain;
+    background-color: #fbffe9;
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
     .admin-blogs{

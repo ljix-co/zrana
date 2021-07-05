@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import {Helmet} from 'react-helmet';
 import logo_title from '../images/logo_home_title.svg';
 import logo from '../logo.svg';
 import arrowLeft from '../images/arrow_left.svg';
@@ -6,6 +7,11 @@ import './style/Home.css';
 const Home = () => {
     return (
         <div className="home">
+            <Helmet>
+                <meta name="description" content="Web aplikacija za razmenu recepata i kulinarskih umeća."/>
+                <meta id="og-title" property="og:title" content="Z'RANA"/>
+                <meta id="og-image" property="og:image" content={logo} />
+            </Helmet>
             <div className="line-grn-l"></div>
             <div className="line-grn-s"></div>
             <div className="floating-btn">
