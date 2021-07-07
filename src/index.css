@@ -500,7 +500,7 @@ p {
 }
 @media only screen and (min-width: 300px) and (max-width: 600px) {
   h1{
-    max-width: 250px;
+    max-width: 290px;
     font-size: 18px;
   }
   input {
@@ -513,7 +513,7 @@ p {
     visibility: visible;
     position: absolute;
     top: 40px;
-    left: 70vw;
+    left: 80vw;
     font-size: 24px;
     text-decoration: underline;
     color: #ff914d;
@@ -600,11 +600,11 @@ p {
   }
   .title h1 {
     font-size: 24px;
-    width: 200px;
+    width: 290px;
   }
   .title p {
-    width: 200px;
-    font-size: 14px;
+    width: 290px;
+    font-size: 18px;
   }
   .search-field {
     width: 250px;

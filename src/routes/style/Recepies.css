@@ -132,7 +132,7 @@
               gap: 30px;
           }
           .recipe{
-            width: 250px;
+            width: 290px;
             height: auto;
             flex-direction: column;
         }
@@ -143,14 +143,14 @@
             order: 1;
         }
         .rec-img{
-            margin-left: 25px;
-            width: 200px;
+            margin-left: 10px;
+            width: 270px;
             height: 320px;
             position: static;
             margin-top: 0px;
             order: 2;
         }
         .rec-title{
-            width: 200px;
+            width: 260px;
         }
         }
